@@ -66,7 +66,7 @@ const FloatingImage = () => {
                   onMouseLeave={handleMouseLeave}
                   onMouseUp={handleMouseLeave}
                   onMouseEnter={handleMouseLeave}
-                  src="/src/assets/alfian4.jpeg"
+                  src="/assets/alfian4.jpeg"
                   alt="alvian"
                   className="object-cover object-center"
                 />

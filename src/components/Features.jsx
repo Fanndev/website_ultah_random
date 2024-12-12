@@ -103,7 +103,7 @@ const Features = () => (
 
       <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
         <BentoCard
-          src="/src/assets/haryo.jpeg"
+          src="/assets/haryo.jpeg"
           title={
             <>
               The Ku<b>ng</b>fu Boy
@@ -117,7 +117,7 @@ const Features = () => (
       <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7">
         <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
           <BentoCard
-            src="/src/assets/alfian.jpeg"
+            src="/assets/alfian.jpeg"
             title={
               <>
                 Sig<b>m</b>a Boy
@@ -130,7 +130,7 @@ const Features = () => (
 
         <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
           <BentoCard
-            src="/src/assets/ryan.jpeg"
+            src="/assets/ryan.jpeg"
             title={
               <>
                 The R<b>i</b>ch Boy
@@ -143,7 +143,7 @@ const Features = () => (
 
         <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
           <BentoCard
-            src="/src/assets/ane.jpeg"
+            src="/assets/ane.jpeg"
             title={
               <>
                 D<b>e</b>veloper

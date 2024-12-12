@@ -3,7 +3,6 @@
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TiLocationArrow } from "react-icons/ti";
 import { VscDebugStart } from "react-icons/vsc";
 import { useEffect, useRef, useState } from "react";
 
@@ -25,18 +24,24 @@ const Hero = () => {
   };
 
   useEffect(() => {
+    if (loadedImages === totalImages) {
+      gsap.to(loadingRef.current, {
+        opacity: 0,
+        duration: 0.5,
+        onComplete: () => setLoading(false),
+      });
+    }
+  }, [loadedImages]);
+
+  useEffect(() => {
     const minLoadingTime = setTimeout(() => {
-      if (loadedImages === totalImages) {
-        gsap.to(loadingRef.current, {
-          opacity: 0,
-          duration: 0.5,
-          onComplete: () => setLoading(false),
-        });
+      if (loading) {
+        setLoading(false);
       }
-    }, 2000);
+    }, 3000); // Set a maximum waiting time for loading
 
     return () => clearTimeout(minLoadingTime);
-  }, [loadedImages]);
+  }, [loading]);
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -76,7 +81,7 @@ const Hero = () => {
       <div className="absolute inset-0 flex">
         <div ref={leftImagesRef} className="flex-1">
           <img
-            src="/src/assets/ryan.jpeg"
+            src="/assets/ryan.jpeg"
             alt="Left image 1"
             width={400}
             height={600}
@@ -107,7 +112,7 @@ const Hero = () => {
         </div>
         <div ref={rightImagesRef} className="flex-1">
           <img
-            src="/src/assets/haryo.jpeg"
+            src="/assets/haryo.jpeg"
             alt="Right image 1"
             width={400}
             height={600}
@@ -115,7 +120,7 @@ const Hero = () => {
             onLoad={handleImageLoad}
           />
           <img
-            src="/src/assets/ane.jpeg"
+            src="/assets/ane.jpeg"
             alt="Right image 2"
             width={400}
             height={600}
@@ -127,7 +132,8 @@ const Hero = () => {
 
       <h1 className="special-font hero-heading absolute bottom-5 right-5 text-white z-10">
         <b className="flex">
-          Hello World!<VscDebugStart />
+          Hello World!
+          <VscDebugStart />
         </b>
       </h1>
     </div>
