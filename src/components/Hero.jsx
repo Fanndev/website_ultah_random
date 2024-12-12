@@ -89,7 +89,7 @@ const Hero = () => {
             onLoad={handleImageLoad}
           />
           <img
-            src="/src/assets/alfian.jpeg"
+            src="/assets/alfian.jpeg"
             alt="Left image 2"
             width={400}
             height={600}
